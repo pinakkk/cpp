@@ -25,6 +25,7 @@ int main() {
   // }
 
   // // using adjacency list O(2 * E);
+  // // in case of directed : O(E)
   vector<int> adj[n + 1];
 
   for (int i = 0; i < m; i++) {
