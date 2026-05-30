@@ -54,3 +54,8 @@ Inorder: 3 6
 Preorder root: 3
 Find 3: 3 | 6
 Right child: 6
+
+
+
+What is Diameter?
+Diameter = Longest path between any two nodes.
