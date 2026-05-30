@@ -12,11 +12,11 @@
 #include <vector>
 using namespace std;
 
-class Heap {
+class minHeap {
 public:
   vector<int> heap;
 
-  void insert(int val) {
+  void insertMinHeap(int val) {
     heap.push_back(val);
 
     int index = heap.size() - 1;
@@ -32,18 +32,57 @@ public:
     }
   }
 
-  void print() {
+  void printMinHeap() {
     for (auto it : heap) {
-      cout << it << endl;
+      cout << it << " ";
+    }
+  }
+};
+
+class maxHeap {
+public:
+  vector<int> heap;
+  void insertMaxHeap(int val) {
+    heap.push_back(val);
+
+    int index = heap.size() - 1;
+
+    while (index > 0) {
+      int parent = (index - 1) / 2;
+
+      if (heap[parent] < heap[index]) {
+        swap(heap[parent], heap[index]);
+        index = parent;
+      } else {
+        break;
+      }
+    }
+  }
+
+  void printMaxHeap() {
+    for (auto it : heap) {
+      cout << it << " ";
     }
   }
 };
 
 int main() {
-  Heap h;
-  h.insert(5);
-  h.insert(10);
-  h.insert(20);
-  h.insert(2);
-  h.print();
+  minHeap h;
+  maxHeap hh;
+  h.insertMinHeap(5);
+  h.insertMinHeap(10);
+  h.insertMinHeap(20);
+  h.insertMinHeap(2);
+  cout << "MIN HEAP" << endl;
+  h.printMinHeap();
+  cout << endl;
+
+  cout << "MAX HEAP" << endl;
+  hh.insertMaxHeap(5);
+  hh.insertMaxHeap(10);
+  hh.insertMaxHeap(20);
+  hh.insertMaxHeap(2);
+  hh.printMaxHeap();
+
+  return 0;
 }
