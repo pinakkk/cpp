@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+// O (N + 2E)
+// Space O(N)
 bool detect(int src, vector<int> adj[], vector<int> &vis) {
   vis[src] = 1;
   queue<pair<int, int>> q;
